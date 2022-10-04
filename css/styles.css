@@ -70,7 +70,10 @@ body .main__slider-slider {
        appearance: none;
   width: 100%;
   height: 0.5rem;
-  background: hsl(174deg, 77%, 80%);
+  background: hsl(224deg, 65%, 95%);
+  background-image: linear-gradient(hsl(174deg, 77%, 80%), hsl(174deg, 77%, 80%));
+  background-size: 50%;
+  background-repeat: no-repeat;
   outline: none;
   opacity: 0.8;
   transition: opacity 0.2s;

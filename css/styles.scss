@@ -78,7 +78,10 @@ body {
                 appearance: none;
                 width: 100%;
                 height: .5rem;
-                background: $SoftCyan;
+                background: $LightGrayishBlue;
+                background-image: linear-gradient(hsl(174, 77%, 80%),hsl(174, 77%, 80%));
+                background-size: 50%;
+                background-repeat: no-repeat;
                 outline: none;
                 opacity: 0.8;
                 transition: opacity 0.2s;
@@ -88,6 +91,7 @@ body {
             &-slider:hover {
                 opacity: 1
             }
+           
             &-slider::-webkit-slider-thumb {
                 -webkit-appearance: none; 
                 appearance: none;

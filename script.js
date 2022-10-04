@@ -18,7 +18,6 @@ const cost = document.querySelector(".main__cost_c")
 const toggle = document.querySelector(".main__billing__toggle")
 const bit = toggle.querySelector(".bit")
 
-
 slider.addEventListener("input", ()=> {
     render(slider.value)
 })
@@ -34,6 +33,7 @@ function render(value) {
     views.innerText = key + ' '
     const cost_ = perYear? PRICE_MAP[key] * 0.75 : PRICE_MAP[key]
     cost.innerText = new Intl.NumberFormat('en-US', {style: 'currency', currency: 'USD', trailingZeroDisplay: "stripIfInteger",}).format(cost_)
+    slider.style.backgroundSize =  `${(value / 1000) * 100}%`
 }
 
 function calibrate(value) {
