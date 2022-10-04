@@ -5,35 +5,66 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="script.js" defer></script>
   
   <title>Frontend Mentor | Interactive pricing component</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
+  <header class="head">
+    <h1 class="head__title">
+      Simple, traffic-based pricing
+    </h1>
+    <p class="head__text">
+      Sign-up for our 30-day trial. No credit card required. 
+    </p>
+  </header>
+  <main class="main">
+    <div class="top-container">
+      <h2 class="main__views">
+        <span class="main__views-amount"></span>Pageviews
+      </h2>
+      <div class="main__slider">
+        <input type="range" min="0" max="1000" value="500" class="main__slider-slider">
+      </div>
+      <div class="main__cost">
 
-  Simple, traffic-based pricing
-  Sign-up for our 30-day trial. No credit card required. 
+        <span class="main__cost_c">$16</span><span class="main__cost_per"> / month</span>
+      </div>
+    </div>
+      
+      <div class="main__billing">
+        <div class="main__billing__text">
+          Monthly Billing
+        </div>
+        <div class="main__billing__toggle"><div class="bit"></div></div>
+        <div class="main__billing__text yearly">
+          Yearly Billing
+        </div>
+      </div>
 
-  Pageviews
-  $ /month
-
-  Monthly Billing
-  Yearly Billing 25% discount
-
-  Unlimited websites
-  100% data ownership
-  Email reports
-
-  Start my trial
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    <div class="bottom-container">
+      <ul class="main__list">
+        <li>
+          <img src="./images/icon-check.svg" alt="check">
+          Unlimited websites
+        </li>
+        <li>
+          <img src="./images/icon-check.svg" alt="check">
+          100% data ownership
+        </li>
+        <li>
+          <img src="./images/icon-check.svg" alt="check">
+          Email reports
+        </li>
+      </ul>
+    </ul>
+    <div class="start_wrap">
+      <button class="main__start">
+        Start my trial
+      </button>
+    </div>
   </div>
+  </main>
 </body>
 </html>

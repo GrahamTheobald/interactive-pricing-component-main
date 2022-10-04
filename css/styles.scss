@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap');
+
+$SoftCyan: hsl(174, 77%, 80%); //  (Full Slider Bar)
+$StrongCyan: hsl(174, 86%, 45%); // (Slider Backround)
+$LightGrayishRed: hsl(14, 92%, 95%); //(Discount Background)
+$LightRed: hsl(15, 100%, 70%); // (Discount Text)
+$PaleBlue: hsl(226, 100%, 87%); //  (CTA Text)
+$White: hsl(0, 0%, 100%); //  (Pricing Component Background)
+$VeryPaleBlue: hsl(230, 100%, 99%); // (Main Background)
+$LightGrayishBlue: hsl(224, 65%, 95%); //  (Empty Slider Bar)
+$LightGrayishBlue2: hsl(223, 50%, 87%); // (Toggle Background)
+$GrayishBlue: hsl(225, 20%, 60%); // (Text)
+$DarkDesaturatedBlue: hsl(227, 35%, 25%); //  (Text & CTA Background)
+
+@mixin col-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+body {
+    @include col-center;
+    font-family: "Manrope";
+    padding: 3rem 1.5rem;
+    background-color: $VeryPaleBlue;
+    color: $GrayishBlue;
+    background-image: url(../images/bg-pattern.svg);
+    background-size: 1200px;
+    background-position: top left;
+    background-repeat: no-repeat;
+    .head {
+        @include col-center;
+        padding: 3rem 0;
+        gap: 1rem;
+        text-align: center;
+        background-image: url(../images/pattern-circles.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        &__title {
+            font-size: 1.3rem;
+            color: $DarkDesaturatedBlue;
+        }
+        &__text {
+            width: 66%;
+            font-size: .9;
+            line-height: 1.5;
+        }
+    }
+    .main {
+        @include col-center;
+        gap: 2.5rem;
+        padding: 2rem 0;
+        width: 100%;
+        background-color: $White;
+        border-radius: .5rem;
+        &__views {
+            font-size: .8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+        &__slider {
+            width: 80%;
+            &-slider {
+                -webkit-appearance: none;
+                appearance: none;
+                width: 100%;
+                height: .5rem;
+                background: $SoftCyan;
+                outline: none;
+                opacity: 0.8;
+                transition: opacity 0.2s;
+                border-radius: 1rem;
+                // overflow: hidden;
+            }
+            &-slider:hover {
+                opacity: 1
+            }
+            &-slider::-webkit-slider-thumb {
+                -webkit-appearance: none; 
+                appearance: none;
+                width: 2.5rem; 
+                height: 2.5rem; 
+                background: $StrongCyan url(../images/icon-slider.svg); 
+                background-repeat: no-repeat;
+                background-position: center;
+                cursor: pointer; 
+                border-radius: 50%;
+                opacity: 1;
+                box-shadow: 0 .5rem 2rem $StrongCyan;
+              }
+            &-slider::-webkit-slider-thumb:hover {
+                cursor: pointer;
+            }
+        }
+        &__cost {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: $DarkDesaturatedBlue;
+            &_per {
+                font-size: 1rem;
+                font-weight: 600;
+                color: $GrayishBlue;
+            }
+        }
+        &__billing {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+            &__text {
+                font-size: .8rem;
+                position: relative;
+               
+            }
+            &__text.yearly::after {
+                content: "25%";
+                position: absolute;
+                right: 0;
+                top: 50%;
+                translate: calc(100% + .5rem) -50%;
+                font-size: .7rem;
+                background-color: $LightGrayishRed;
+                color: $LightRed;
+                padding: .2rem .6rem;
+                border-radius: 3rem;
+            }
+            &__toggle:hover {
+                cursor: pointer;
+                background-color: $StrongCyan;
+            }
+            &__toggle {
+                display: flex;
+                align-items: center;
+                width: 2.5rem;
+                height: 1.5rem;
+                background-color: $LightGrayishBlue2;
+                padding: .3rem;
+                border-radius: 3rem;
+                transition: background-color .3s;
+                .bit.tog {
+                    margin-left: auto;
+                }
+                .bit {
+                    height: calc(1.5rem - 0.5rem);
+                    border-radius: 50%;
+                    width: calc(1.5rem - 0.5rem);
+                    background-color: $White;
+                }
+            }
+        }
+        &__list {
+            @include col-center;
+            gap: 1rem;
+            width: 100%;
+            padding-top: 1.5rem ;
+            list-style: none;
+            font-size: .8rem;
+            li {
+                img {
+                    margin-right: .7rem;
+                }
+            }
+        }
+        &__start {
+            outline: none;
+            border: none;
+            font-family: inherit;
+            font-size: .8rem;
+            padding: .8rem 2.5rem;
+            border-radius: 3rem;
+            background-color: $DarkDesaturatedBlue;
+            color: $PaleBlue;
+        }
+        &__start:hover {
+            cursor: pointer;
+            color: $White;
+            transition: color .3s;
+        }
+        .bottom-container {
+            @include col-center;
+            gap: 2rem;
+            border-top: 1px solid $LightGrayishBlue2;
+            width: 100%;
+
+        }
+        .top-container {
+            // @include col-center;
+            display: grid;
+            justify-items: center;
+            width: 100%;
+            gap: 2rem;
+        }
+    }
+}
+
+@media screen and (min-width: 600px) {
+    body {
+        gap: 3rem;
+        background-size: cover;
+        background-position: 0 -250px;
+        header {
+            width: 100%;
+        }
+        .main {
+            .top-container {
+                align-items: center;
+                grid-template-columns: 1fr 1fr;
+                width: 80%;
+                .main__cost {
+                    order: 2;
+                    margin-left: auto;
+                }
+                .main__views {
+                    margin-right: auto;
+                    font-weight: 800;
+                }
+                .main__slider {
+                    width: 100%;
+                    order: 3;
+                    grid-column: 1 / span 2;
+                }
+            }
+            .bottom-container {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+                .main__list {
+                    align-items: flex-start;
+                    padding: 2rem 3rem;
+                }
+                .start_wrap {
+                    padding: 2rem 3rem;
+                }
+            }
+            max-width: 600px;
+            &__billing{
+                &__text.yearly::after {
+                    content: "25% discount";
+                    white-space: nowrap;
+                }
+            }
+        }
+    }
+}
